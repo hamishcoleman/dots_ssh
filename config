@@ -1,0 +1,23 @@
+#
+#
+
+Host *
+    HashKnownHosts no
+    ForwardX11 yes
+    ForwardAgent yes
+    ControlPersist 10m
+    ControlPath ~/.ssh/master/%r@%n:%p
+    ControlMaster auto
+
+    UserKnownHostsFile ~/.ssh/known_hosts ~/.ssh/known_hosts.autoadd
+
+   ServerAliveInterval 30
+   ServerAliveCountMax 4
+   TCPKeepAlive yes
+#   VerifyHostKeyDNS ask
+
+
+# Old way of proxying 
+#Host *.acx
+#    ProxyCommand ~/.ssh/ssh_ProxyCommand %h %p
+
