@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# This is a helper for ssh config files - it checks if we have a direct route
+# to the host in $1
+#
+# This is useful in "Match exec "~/.ssh/match_onNet %h"
+#
+# TODO:
+# "ipv6.l.google.com has IPv6 address 2a00:1450:4009:815::200e"
+
+HOST="$1"
+if [ -z "$HOST" ]; then
+    echo need hostname
+    exit 1
+fi
+
+NOT=-v
+if [ "$2" = "not" ]; then
+    NOT=""
+fi
+
+dns_lookup() {
+    [ -z "$1" ] && return 1
+    IP=`host "$1" |grep "has address" |cut -d" " -f4`
+    [ -z "$IP" ] && return 1
+    echo $IP
+    return 0
+}
+
+case "$HOST" in
+    [0-9]*)
+        # FIXME - makes the assumption that hostnames do not start with numbers
+        # (which is what the spec says, but nobody enforced it, so ...)
+        IPADDR="$HOST"
+        ;;
+    *)
+        IPADDR=`dns_lookup "$HOST"`
+        ;;
+esac
+
+if [ -z "$IPADDR" ]; then
+    echo error resolving $HOST
+    exit 1
+fi
+
+ip -o route get "$IPADDR" | grep $NOT " via " >/dev/null
+
