@@ -16,7 +16,6 @@ Host *
    TCPKeepAlive yes
 #   VerifyHostKeyDNS ask
 
-
 # Old way of proxying 
 #Host *.acx
 #    ProxyCommand ~/.ssh/ssh_ProxyCommand %h %p
