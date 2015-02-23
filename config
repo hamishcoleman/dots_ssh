@@ -9,7 +9,7 @@ Host *
     ControlPath ~/.ssh/master/%r@%n:%p
     ControlMaster auto
 
-    UserKnownHostsFile ~/.ssh/known_hosts ~/.ssh/known_hosts.autoadd
+    UserKnownHostsFile ~/.ssh/known_hosts ~/.ssh/known_hosts_zot ~/.ssh/known_hosts.autoadd
 
    ServerAliveInterval 30
    ServerAliveCountMax 4
