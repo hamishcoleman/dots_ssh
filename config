@@ -6,7 +6,7 @@ Host *
     ForwardX11 yes
     ForwardAgent yes
     ControlPersist 10m
-    ControlPath ~/.ssh/master/%r@%n:%p
+    ControlPath ~/.ssh/master/%r@%h:%p
     ControlMaster auto
 
     UserKnownHostsFile ~/.ssh/known_hosts ~/.ssh/known_hosts.autoadd
