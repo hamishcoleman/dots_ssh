@@ -1,0 +1,16 @@
+#
+# A set of local config defaults that make my ssh sessions better for me
+# and also appear to be generically useful for other people
+#
+
+ForwardAgent yes
+ForwardX11 yes
+
+ControlMaster auto
+ControlPath ~/.ssh/master/%r@%h:%p
+ControlPersist 10m
+
+ServerAliveInterval 30
+ServerAliveCountMax 4
+TCPKeepAlive yes
+
