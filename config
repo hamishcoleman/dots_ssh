@@ -1,8 +1,8 @@
 
 Include environments.d/*.conf
+Include config.defaults
 
 Host *
-    Include config.defaults
     HashKnownHosts no
 
     UserKnownHostsFile ~/.ssh/known_hosts
