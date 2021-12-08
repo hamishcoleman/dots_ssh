@@ -1,3 +1,4 @@
+# These contents are from Hamish Coleman's dotfiles collection
 
 Include environments.d/*.conf
 Include config.defaults
