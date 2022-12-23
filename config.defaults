@@ -4,6 +4,8 @@
 # and also appear to be generically useful for other people
 #
 
+UserKnownHostsFile ~/.ssh/known_hosts.autoadd
+
 ForwardAgent yes
 ForwardX11 yes
 
@@ -15,3 +17,4 @@ ServerAliveInterval 30
 ServerAliveCountMax 4
 TCPKeepAlive yes
 
+AddKeysToAgent yes
