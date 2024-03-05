@@ -10,7 +10,7 @@ ForwardAgent yes
 ForwardX11 yes
 
 ControlMaster auto
-ControlPath ~/.ssh/master/%r@%h:%p
+ControlPath ~/.ssh/master/%r@%k:%p
 ControlPersist 10m
 
 ServerAliveInterval 30
