@@ -1,5 +1,8 @@
 # These contents are from Hamish Coleman's dotfiles collection
 
+Host github.com
+    ForwardAgent no
+
 Include environments.d/*.conf
 Include config.defaults
 
