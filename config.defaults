@@ -5,7 +5,12 @@
 #
 # :dotsctl:
 #   destdir: ~/.ssh/
+#   mkdir:
+#     - ~/.ssh/master
 # ...
+#
+# TODO:
+#   chown u=rwx,go= ~/.ssh/master
 #
 
 UserKnownHostsFile ~/.ssh/known_hosts.autoadd
