@@ -1,5 +1,9 @@
 #!/bin/bash
 #
+# :dotsctl:
+#   destdir: ~/.ssh/
+# ...
+#
 # This is a helper for ssh config files - it checks if we have a direct route
 # to the host in $1
 #

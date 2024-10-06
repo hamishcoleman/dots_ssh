@@ -1,4 +1,8 @@
 # These contents are from Hamish Coleman's dotfiles collection
+#
+# :dotsctl:
+#   destdir: ~/.ssh/
+# ...
 
 Include environments.d/*.conf
 Include config.defaults

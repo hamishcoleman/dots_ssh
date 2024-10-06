@@ -3,6 +3,10 @@
 # A set of local config defaults that make my ssh sessions better for me
 # and also appear to be generically useful for other people
 #
+# :dotsctl:
+#   destdir: ~/.ssh/
+# ...
+#
 
 UserKnownHostsFile ~/.ssh/known_hosts.autoadd
 
