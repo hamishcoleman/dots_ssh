@@ -15,8 +15,8 @@
 
 UserKnownHostsFile ~/.ssh/known_hosts.autoadd
 
-ForwardAgent yes
-ForwardX11 yes
+#ForwardAgent yes
+ForwardX11 no
 
 ControlMaster auto
 ControlPath ~/.ssh/master/%r@%k:%p
