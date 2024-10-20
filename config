@@ -3,22 +3,7 @@
 # :dotsctl:
 #   destdir: ~/.ssh/
 # ...
-#
-# TODO:
-#  chmod u=rwx,go= ~/.ssh
 
-Include environments.d/*.conf
-
-Include config.defaults
-
-Host github.com
-    ForwardAgent no
-
-Host *
-    HashKnownHosts no
-
-    UserKnownHostsFile ~/.ssh/known_hosts
-
-#   VerifyHostKeyDNS ask
-
-
+# Sometimes, external "helpers" will "helpfully" overwrite your ssh config.
+# Make our local config more easy to repair by storing it in a different file.
+include config.main

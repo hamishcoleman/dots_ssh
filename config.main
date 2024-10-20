@@ -1,0 +1,24 @@
+# These contents are from Hamish Coleman's dotfiles collection
+#
+# :dotsctl:
+#   destdir: ~/.ssh/
+# ...
+#
+# TODO:
+#  chmod u=rwx,go= ~/.ssh
+
+Include environments.d/*.conf
+
+Include config.defaults
+
+Host github.com
+    ForwardAgent no
+
+Host *
+    HashKnownHosts no
+
+    UserKnownHostsFile ~/.ssh/known_hosts
+
+#   VerifyHostKeyDNS ask
+
+
