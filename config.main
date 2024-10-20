@@ -10,11 +10,3 @@
 Include environments.d/*.conf
 
 Include config.defaults
-
-Host *
-    HashKnownHosts no
-
-    UserKnownHostsFile ~/.ssh/known_hosts
-
-#   VerifyHostKeyDNS ask
-

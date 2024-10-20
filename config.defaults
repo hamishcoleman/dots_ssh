@@ -13,17 +13,28 @@
 #   chown u=rwx,go= ~/.ssh/master
 #
 
-UserKnownHostsFile ~/.ssh/known_hosts.autoadd
+Match final all
+    # any unknown hosts can be added to the catchall known hosts file
+    UserKnownHostsFile ~/.ssh/known_hosts.autoadd
 
-#ForwardAgent yes
-ForwardX11 no
+    # Connection caching
+    ControlMaster auto
+    ControlPath ~/.ssh/master/%r@%k:%p
+    ControlPersist 10m
 
-ControlMaster auto
-ControlPath ~/.ssh/master/%r@%k:%p
-ControlPersist 10m
+    # Trade ability to ride-out outages for better connection status tracking
+    ServerAliveInterval 30
+    ServerAliveCountMax 4
+    TCPKeepAlive yes
 
-ServerAliveInterval 30
-ServerAliveCountMax 4
-TCPKeepAlive yes
+    # Make tab completion work, at the cost of providing a shopping list
+    HashKnownHosts no
+#   VerifyHostKeyDNS ask
 
-AddKeysToAgent yes
+    # If we ever successfully unlock a key, add it to the keyring
+    AddKeysToAgent yes
+
+    # Agent forwarding makes a security hole, so do not enable it by default
+    ForwardAgent no
+    # X forwarding is very rarely used, and also makes a security hole
+    ForwardX11 no
