@@ -11,9 +11,6 @@ Include environments.d/*.conf
 
 Include config.defaults
 
-Host github.com
-    ForwardAgent no
-
 Host *
     HashKnownHosts no
 
